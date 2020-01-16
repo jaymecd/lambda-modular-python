@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Handler: index.lambda_handler
+      Runtime: python3.7
+      Code:
+        ZipFile: |
+          import datetime, json, platform
+          def lambda_handler(event, context):
+              result = {
+                  "time": datetime.datetime.utcnow().isoformat(),
+                  "python": platform.python_version(),
+              }
+              return json.dumps(result)
+
+# CONS:
+#   - only for python/nodejs
+#   - limit 4K characters
+#   - no external dependencies (except via layers)
+#   - lint/test nightmare

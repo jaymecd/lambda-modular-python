@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+
+  MyFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      # @see https://gist.github.com/gene1wood/06a64ba80cf3fe886053f0ca6d375bc0#how-to-correctly-solve-the-problem
+      Handler: app.main.lambda_handler
+      Runtime: python3.7
+      Timeout: 20
+      CodeUri: ./myfunction/dist
+
+# CONS:
+#   - local source only by 'AWS::Serverless::Function'
+#   - use 'aws cloudformation package' to upload code after build
