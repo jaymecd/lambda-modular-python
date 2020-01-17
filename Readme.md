@@ -17,3 +17,7 @@ Different approaches to write Lambda code in python:
 - [3.2 - advanced-modular](p3.2.advanced-modular/)
 - [3.3 - advanced-testing](p3.3.advanced-testing/)
 - [3.4 - advanced-di-ioc](p3.4.advanced-di-ioc/)
+
+## Found bug?
+
+Please [open an issue](https://github.com/jaymecd/lambda-modular-python/issues/new) with details.
